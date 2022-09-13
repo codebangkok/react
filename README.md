@@ -113,14 +113,14 @@ jest-environment-jsdom \
 </head>
 <body>
     <div id="root"></div>
-    <script src="main"></script>
+    <script src="main.js"></script>
 </body>
 </html>
 ```
 
 9) Create index.js to src directory
 ```js
-import React from "react";
+import React from "react"
 import { createRoot } from "react-dom/client"
 
 const App = () => {
