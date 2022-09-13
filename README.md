@@ -135,6 +135,7 @@ root.render(<App/>)
 10) Create .gitignore file 
 ```
 node_modules/
+package-lock.json
 ```
 
 11) Run git init
