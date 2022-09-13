@@ -132,22 +132,22 @@ const root = createRoot(el)
 root.render(<App/>)
 ```
 
-10) Run command build
-```sh
-npm run build
-```
-
-11) Start React Web Development
-```sh
-npm start
-```
-
-12) Create .gitignore file 
+10) Create .gitignore file 
 ```
 node_modules/
 ```
 
-13) Run git init
+11) Run git init
 ```sh
 git init
+```
+
+12) Run command build
+```sh
+npm run build
+```
+
+13) Start React Web Development
+```sh
+npm start
 ```
