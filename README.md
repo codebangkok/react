@@ -141,3 +141,13 @@ npm run build
 ```sh
 npm start
 ```
+
+12) Create .gitignore file 
+```
+node_modules/
+```
+
+13) Run git init
+```sh
+git init
+```
