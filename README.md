@@ -94,7 +94,7 @@ jest-environment-jsdom \
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
     "test": "jest --watch"
-}
+},
 ```
 
 7) Create 2 directory
