@@ -90,11 +90,11 @@ jest-environment-jsdom \
 
 6) Config start, build, test scripts to package.json
 ```json
-"scripts": {
+  "scripts": {
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack --config webpack.config.js",
     "test": "jest --watch"
-},
+  },
 ```
 
 7) Create 2 directory
