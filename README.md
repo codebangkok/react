@@ -9,6 +9,7 @@
 * CDN https://cdnjs.com
 * Faker https://fakerjs.dev
 * Jest https://jestjs.io
+* Testing Library https://testing-library.com
 
 #### Package
 * [create-react-app](https://www.npmjs.com/package/create-react-app)
@@ -101,3 +102,15 @@ css-loader \
 && npm i react react-dom
 ```
 
+#### Install Test Library
+* Install Jest CLI to Global
+```sh
+npm i -g jest-cli
+```
+* Install Jest Library
+```sh
+npm i --save-dev \
+jest-environment-jsdom \
+@testing-library/jest-dom \
+@testing-library/react
+```
