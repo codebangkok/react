@@ -15,7 +15,6 @@
 * [create-react-app](https://www.npmjs.com/package/create-react-app)
 * [react](https://www.npmjs.com/package/react)
 * [react-dom](https://www.npmjs.com/package/react-dom)
-* [react-scripts](https://www.npmjs.com/package/react-scripts)
 * [prop-types](https://www.npmjs.com/package/prop-types)
 * [axios](https://www.npmjs.com/package/axios)
 * [@faker-js/faker](https://www.npmjs.com/package/@faker-js/faker)
@@ -23,7 +22,6 @@
 * [@testing-library/jest-dom](https://www.npmjs.com/package/@testing-library/jest-dom)
 * [@testing-library/user-event
 ](https://www.npmjs.com/package/@testing-library/user-event)
-* [jest](https://www.npmjs.com/package/jest)
 * [jest-cli](https://www.npmjs.com/package/jest-cli)
 
 ### VSCode Extension
@@ -32,7 +30,7 @@
 * [CodeSnap](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 * [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client)
 
-#### [Google Chrome Extension](https://www.youtube.com/watch?v=xv8LaashiWM) (Recommended by [Patiphan Phengpao](https://www.youtube.com/c/PatiphanPhengpao))
+#### [Google Chrome Extension](https://www.youtube.com/watch?v=xv8LaashiWM)
 * [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 * [Debug CSS](https://chrome.google.com/webstore/detail/debug-css/igiofjnckcagmjgdoaakafngegecjnkj)
 * [Inspect Element](https://chrome.google.com/webstore/detail/inspect-element/flgcpmeleoikcibkiaiindbcjeldcogp)
@@ -40,47 +38,22 @@
 * [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/mhimpmpmffogbmmkmajibklelopddmjf)
 * [RestMan](https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi/related)
 
-
-#### [Create React App without Create React App](https://blog.bitsrc.io/create-react-app-without-create-react-app-b0a5806a92) by [Kannan Nagasamy](https://medium.com/@kannankannan18)
-* Install webpack dependencies
+# Create React App
+1) Create new directory and change to directory that you create
 ```sh
-npm i --save-dev \
-webpack \
-webpack-cli \
-webpack-dev-server
+mkdir reactapp
+cd reactapp 
 ```
 
-* Install the Babel dependencies
+2) Init node package
 ```sh
-npm i --save-dev \
-babel-loader \
-@babel/preset-env \
-@babel/core \
-@babel/plugin-transform-runtime \
-@babel/preset-react \
-@babel/eslint-parser \
-@babel/runtime \
-@babel/cli
+npm init -y
 ```
 
-* Install required Linters and path
+3) Install react, webpack, babel, linters, path, loader dependencies
 ```sh
-npm i --save-dev \
-eslint \
-eslint-config-airbnb-base \
-eslint-plugin-jest \
-eslint-config-prettier \
-path
-```
-
-* Install react and react-dom
-```sh
-npm i react react-dom
-```
-
-* All in one command
-```sh
-npm i --save-dev \
+npm i react react-dom \
+&& npm i --save-dev \
 webpack \
 webpack-cli \
 webpack-dev-server \
@@ -98,19 +71,73 @@ eslint-plugin-jest \
 eslint-config-prettier \
 path \
 style-loader \
-css-loader \
-&& npm i react react-dom
+css-loader
 ```
 
-#### Install Test Library
-* Install Jest CLI to Global
+4) Install Testing Library and Jest (Optional for test)
 ```sh
-npm i -g jest-cli
-```
-* Install Jest Library
-```sh
-npm i --save-dev \
+npm i -g jest-cli \
+&& npm i --save-dev \
 jest-environment-jsdom \
 @testing-library/jest-dom \
 @testing-library/react
+```
+
+5) Copy files from resources to your root project directory
+* .babelrc
+* webpack.config.js
+* .jest.config.js (Optional for test)
+
+6) Config start, build, test scripts to package.json
+```json
+"scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
+    "test": "jest --watch"
+}
+```
+
+7) Create 2 directory
+* public
+* src
+
+8) Create file index.html to public directory
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="main"></script>
+</body>
+</html>
+```
+
+9) Create index.js to src directory
+```js
+import React from "react";
+import { createRoot } from "react-dom/client"
+
+const App = () => {
+    return <div>Hello World</div>
+}
+
+const el = document.getElementById("root")
+const root = createRoot(el)
+root.render(<App/>)
+```
+
+10) Run command build
+```sh
+npm run build
+```
+
+11) Start React Web Development
+```sh
+npm start
 ```
