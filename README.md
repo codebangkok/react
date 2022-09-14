@@ -80,7 +80,8 @@ npm i -g jest-cli \
 && npm i --save-dev \
 jest-environment-jsdom \
 @testing-library/jest-dom \
-@testing-library/react
+@testing-library/react \
+@testing-library/user-event
 ```
 
 5) Copy files from resources to your root project directory
