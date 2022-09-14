@@ -23,6 +23,7 @@
 * [@testing-library/user-event
 ](https://www.npmjs.com/package/@testing-library/user-event)
 * [jest-cli](https://www.npmjs.com/package/jest-cli)
+* [Mock Service Worker]https://www.npmjs.com/package/msw
 
 ### VSCode Extension
 * [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
@@ -81,7 +82,8 @@ npm i -g jest-cli \
 jest-environment-jsdom \
 @testing-library/jest-dom \
 @testing-library/react \
-@testing-library/user-event
+@testing-library/user-event \
+msw
 ```
 
 5) Copy files from resources to your root project directory
