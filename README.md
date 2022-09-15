@@ -10,6 +10,7 @@
 * Faker https://fakerjs.dev
 * Jest https://jestjs.io
 * Testing Library https://testing-library.com
+* Jest DOM https://github.com/testing-library/jest-dom
 
 #### Package
 * [create-react-app](https://www.npmjs.com/package/create-react-app)
