@@ -40,7 +40,111 @@
 * [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/mhimpmpmffogbmmkmajibklelopddmjf)
 * [RestMan](https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi/related)
 
-# Create React App
+# Create React App - Step by Step
+## Webpack
+1) Create new directory and change to directory that you create
+```sh
+mkdir reactapp
+cd reactapp 
+```
+
+2) Init node package
+```sh
+npm init -y
+```
+
+3) Install webpack
+```sh
+npm i --save-dev \
+webpack-cli \
+webpack-dev-server \
+path
+```
+
+4) Create new file webpack.config.js
+```js
+const path = require("path");
+
+module.exports={
+    mode: "development", 
+    entry: "./src/index.js", 
+    output: {
+        path: path.resolve(__dirname, "public"),
+        filename: "main.js"
+    },
+    target: "web",
+    devServer: {
+        port: "9500",
+        static: ["./public"],
+        open: true,
+        hot: true ,
+        liveReload: true
+    },
+}
+```
+
+5) Create 2 directory
+* public
+* src
+
+6) Create file index.html to public directory and add 2 line in body
+```html
+<div id="root"></div>
+<script src="main.js"></script>
+```
+
+6) Config start, build to package.json
+```json
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+```
+
+## Babel
+7) Add module to webpack.config.js
+```js
+    resolve: {
+        extensions: ['.js','.jsx','.json'] 
+    },
+    module:{
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use:  'babel-loader'
+            },
+        ]
+    }
+```
+
+8) Create new file .babelrc
+```js
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+}
+```
+
+9) Install babel
+```sh
+npm i --save-dev babel-loader \
+@babel/preset-env \
+@babel/plugin-transform-runtime \
+@babel/preset-react \
+```
+
+9) Install react
+```sh
+npm i react react-dom
+```
+
+# Create React App - Completed
 1) Create new directory and change to directory that you create
 ```sh
 mkdir reactapp
@@ -95,8 +199,8 @@ msw
 6) Config start, build, test scripts to package.json
 ```json
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
-    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server",
+    "build": "webpack",
     "test": "jest --watch"
   },
 ```
