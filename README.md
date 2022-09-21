@@ -24,7 +24,7 @@
 * [@testing-library/user-event
 ](https://www.npmjs.com/package/@testing-library/user-event)
 * [jest-cli](https://www.npmjs.com/package/jest-cli)
-* [Mock Service Worker]https://www.npmjs.com/package/msw
+* [Mock Service Worker](https://www.npmjs.com/package/msw)
 
 ### VSCode Extension
 * [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
