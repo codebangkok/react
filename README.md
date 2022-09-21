@@ -136,7 +136,7 @@ module.exports={
 npm i --save-dev babel-loader \
 @babel/preset-env \
 @babel/plugin-transform-runtime \
-@babel/preset-react \
+@babel/preset-react
 ```
 
 9) Install react
