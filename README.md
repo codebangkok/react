@@ -40,7 +40,7 @@
 * [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/mhimpmpmffogbmmkmajibklelopddmjf)
 * [RestMan](https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi/related)
 
-# Create React App - Step by Step
+# Create React App - Minimal
 ## Webpack
 1) Create new directory and change to directory that you create
 ```sh
@@ -144,7 +144,7 @@ npm i --save-dev babel-loader \
 npm i react react-dom
 ```
 
-# Create React App - Completed
+# Create React App - Full
 1) Create new directory and change to directory that you create
 ```sh
 mkdir reactapp
