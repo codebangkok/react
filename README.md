@@ -144,6 +144,15 @@ npm i --save-dev babel-loader \
 npm i react react-dom
 ```
 
+10) Testing Library
+```sh
+npm i -g jest-cli \
+&& npm i --save-dev \
+jest-environment-jsdom \
+@testing-library/jest-dom \
+@testing-library/react
+```
+
 # Create React App - Full
 1) Create new directory and change to directory that you create
 ```sh
