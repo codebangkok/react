@@ -61,7 +61,7 @@ webpack-dev-server \
 path
 ```
 
-4) Create new file webpack.config.js
+4) Create a new file webpack.config.js
 ```js
 const path = require("path");
 
@@ -118,7 +118,7 @@ module.exports={
     }
 ```
 
-8) Create new file .babelrc
+8) Create a new file .babelrc
 ```js
 {
     "presets": [
@@ -133,7 +133,8 @@ module.exports={
 
 9) Install babel
 ```sh
-npm i --save-dev babel-loader \
+npm i --save-dev \
+babel-loader \
 @babel/preset-env \
 @babel/plugin-transform-runtime \
 @babel/preset-react
@@ -153,6 +154,13 @@ jest-environment-jsdom \
 @testing-library/react
 ```
 
+11) Create a new file jest.config.js
+```js
+module.exports = {
+    testEnvironment: 'jsdom',
+}
+```
+
 # Create React App - Full
 1) Create new directory and change to directory that you create
 ```sh
@@ -169,21 +177,12 @@ npm init -y
 ```sh
 npm i react react-dom \
 && npm i --save-dev \
-webpack \
 webpack-cli \
 webpack-dev-server \
 babel-loader \
 @babel/preset-env \
-@babel/core \
 @babel/plugin-transform-runtime \
 @babel/preset-react \
-@babel/eslint-parser \
-@babel/runtime \
-@babel/cli \
-eslint \
-eslint-config-airbnb-base \
-eslint-plugin-jest \
-eslint-config-prettier \
 path \
 style-loader \
 css-loader
@@ -195,17 +194,68 @@ npm i -g jest-cli \
 && npm i --save-dev \
 jest-environment-jsdom \
 @testing-library/jest-dom \
-@testing-library/react \
-@testing-library/user-event \
-msw
+@testing-library/react
 ```
 
-5) Copy files from resources to your root project directory
-* .babelrc
-* webpack.config.js
-* .jest.config.js (Optional for test)
+5) Create a new file webpack.config.js
+```js
+const path = require("path");
 
-6) Config start, build, test scripts to package.json
+module.exports={
+    mode: "development", 
+    entry: "./src/index.js", 
+    output: {
+        path: path.resolve(__dirname, "public"),
+        filename: "main.js"
+    },
+    target: "web",
+    devServer: {
+        port: "9500",
+        static: ["./public"],
+        open: true,
+        hot: true ,
+        liveReload: true
+    },
+    resolve: {
+        extensions: ['.js','.jsx','.json'] 
+    },
+    module:{
+        rules: [
+            {
+                test: /\.(js|jsx)$/, 
+                exclude: /node_modules/, 
+                use:  'babel-loader' 
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+        ]
+    }
+}
+```
+
+6) Create a new file .babelrc
+```js
+{
+    "presets": [
+        "@babel/preset-env", 
+        "@babel/preset-react" 
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+}
+```
+
+7) Create a new file jest.config.js
+```js
+module.exports = {
+    testEnvironment: 'jsdom',
+}
+```
+
+8) Config start, build, test scripts to package.json
 ```json
   "scripts": {
     "start": "webpack-dev-server",
@@ -214,11 +264,11 @@ msw
   },
 ```
 
-7) Create 2 directory
+9) Create 2 directory
 * public
 * src
 
-8) Create file index.html to public directory
+10) Create file index.html to public directory
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -235,7 +285,7 @@ msw
 </html>
 ```
 
-9) Create index.js to src directory
+11) Create index.js to src directory
 ```js
 import React from "react"
 import { createRoot } from "react-dom/client"
@@ -249,23 +299,3 @@ const root = createRoot(el)
 root.render(<App/>)
 ```
 
-10) Create .gitignore file 
-```
-node_modules/
-package-lock.json
-```
-
-11) Run git init
-```sh
-git init
-```
-
-12) Run command build
-```sh
-npm run build
-```
-
-13) Start React Web Development
-```sh
-npm start
-```
