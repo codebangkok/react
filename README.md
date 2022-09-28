@@ -165,7 +165,7 @@ module.exports = {
 1) Install react, webpack, babel, linters, path, loader dependencies
 ```sh
 npm init -y \
-&& npm i react react-dom \
+&& npm i react react-dom prop-types \
 && npm i --save-dev \
 webpack-cli \
 webpack-dev-server \
