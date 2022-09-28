@@ -40,7 +40,7 @@
 * [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/mhimpmpmffogbmmkmajibklelopddmjf)
 * [RestMan](https://chrome.google.com/webstore/detail/restman/ihgpcfpkpmdcghlnaofdmjkoemnlijdi/related)
 
-# Create React App - Minimal
+# Create React App - Simple
 ## Webpack
 1) Create new directory and change to directory that you create
 ```sh
