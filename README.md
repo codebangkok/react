@@ -182,7 +182,7 @@ jest-environment-jsdom \
 && npm i -g jest-cli
 ```
 
-5) Create a new file webpack.config.js
+2) Create a new file webpack.config.js
 ```js
 const path = require("path");
 
@@ -220,7 +220,7 @@ module.exports={
 }
 ```
 
-6) Create a new file .babelrc
+3) Create a new file .babelrc
 ```js
 {
     "presets": [
@@ -233,14 +233,14 @@ module.exports={
 }
 ```
 
-7) Create a new file jest.config.js
+4) Create a new file jest.config.js
 ```js
 module.exports = {
     testEnvironment: 'jsdom',
 }
 ```
 
-8) Config start, build, test scripts to package.json
+5) Config start, build, test scripts to package.json
 ```json
   "scripts": {
     "start": "webpack-dev-server",
@@ -249,11 +249,11 @@ module.exports = {
   },
 ```
 
-9) Create 2 directory
+6) Create 2 directory
 * public
 * src
 
-10) Create file index.html to public directory
+7) Create file index.html to public directory
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -270,7 +270,7 @@ module.exports = {
 </html>
 ```
 
-11) Create index.js to src directory
+8) Create index.js to src directory
 ```js
 import React from "react"
 import { createRoot } from "react-dom/client"
