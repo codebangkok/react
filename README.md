@@ -162,20 +162,10 @@ module.exports = {
 ```
 
 # Create React App - Full
-1) Create new directory and change to directory that you create
+1) Install react, webpack, babel, linters, path, loader dependencies
 ```sh
-mkdir reactapp
-cd reactapp 
-```
-
-2) Init node package
-```sh
-npm init -y
-```
-
-3) Install react, webpack, babel, linters, path, loader dependencies
-```sh
-npm i react react-dom \
+npm init -y \
+&& npm i react react-dom \
 && npm i --save-dev \
 webpack-cli \
 webpack-dev-server \
@@ -185,16 +175,11 @@ babel-loader \
 @babel/preset-react \
 path \
 style-loader \
-css-loader
-```
-
-4) Install Testing Library and Jest (Optional for test)
-```sh
-npm i -g jest-cli \
-&& npm i --save-dev \
+css-loader \
 jest-environment-jsdom \
 @testing-library/jest-dom \
-@testing-library/react
+@testing-library/react \
+&& npm i -g jest-cli
 ```
 
 5) Create a new file webpack.config.js
